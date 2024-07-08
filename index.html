@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Videos Tube</title>
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+            rel="stylesheet"
+            type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!--  google font  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+            rel="stylesheet" />
+
+        <style>
+            .font-inter {
+                font-family: 'Inter', sans-serif;
+            }
+        </style>
+    </head>
+    <body class="box-border px-1 md:px-14 font-inter">
+        <header class="py-2 md:py-10">
+            <!--  Navigation bar -->
+            <nav>
+                <div class="navbar bg-base-100">
+                    <div class="navbar-start">
+                        <div class="dropdown">
+                            <div
+                                tabindex="0"
+                                role="button"
+                                class="btn btn-ghost lg:hidden">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M4 6h16M4 12h8m-8 6h16" />
+                                </svg>
+                            </div>
+                            <ul
+                                tabindex="0"
+                                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                <li>
+                                    <a class="btn btn-active btn-sm"
+                                        >Sort by view</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="btn btn-ghost text-xl"
+                            ><span class="text-[#FF1F3D]">Videos</span> Tube</a
+                        >
+                    </div>
+                    <div class="navbar-center hidden lg:flex">
+                        <ul class="menu menu-horizontal px-1">
+                            <li>
+                                <a class="btn btn-active btn-sm"
+                                    >Sort by view</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navbar-end">
+                        <a class="btn btn-error text-white btn-sm px-7">Blog</a>
+                    </div>
+                </div>
+            </nav>
+            <hr class="my-8 h-[1px] bg-black" />
+        </header>
+
+        <section>
+            <!-- Search area -->
+            <div class="text-center space-x-3">
+                <button
+                    onclick="allUsersData()"
+                    class="btn btn-active btn-sm px-6 hover:bg-[#2cdf59] focus:text-white focus:bg-[#FF1F3D]">
+                    All
+                </button>
+                <button
+                    onclick="musicCatagoriesData()"
+                    class="btn btn-active btn-sm px-6 hover:bg-[#2cdf59] focus:text-white focus:bg-[#FF1F3D]">
+                    Music
+                </button>
+                <button
+                    onclick="comedyCatagoriesData()"
+                    class="btn btn-active btn-sm px-6 hover:bg-[#2cdf59] focus:text-white focus:bg-[#FF1F3D]">
+                    Comedy
+                </button>
+                <button
+                    onclick="drawingCatagoriesData()"
+                    class="btn btn-active btn-sm px-6 hover:bg-[#2cdf59] focus:text-white focus:bg-[#FF1F3D]">
+                    Drawing
+                </button>
+            </div>
+
+            <!--  Content area -->
+            <div
+                id="parent-element"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-10"></div>
+        </section>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
