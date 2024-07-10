@@ -5,24 +5,32 @@ const fetchData = async (id = '1000') => {
         `https://openapi.programming-hero.com/api/videos/category/${id}`
     );
     const data = await response.json();
-    const users = data.data;
-
-    console.log(users);
-    displayUsers(users);
+    displayUsers(data);
 };
-
 fetchData();
 
 //* Display Users
 
-const displayUsers = (users) => {
+const displayUsers = (data) => {
     const parentElement = document.getElementById('parent-element');
-
     parentElement.textContent = '';
 
-    users.forEach((user) => {
-        console.log(user);
+    if (data.status === false) {
+        const displayError = document.createElement('div');
+        displayError.innerHTML = `
+            <div class="mx-auto text-center ">
+                <img src="./image/Icon.png" alt="icon" />
+                <h3 class="text-3xl font-bold">
+                    Oops!! Sorry, There is no content here
+                </h3>
+            </div>
+        `;
+        parentElement.appendChild(displayError);
+    }
 
+    const users = data.data;
+
+    users.forEach((user) => {
         const createChild = document.createElement('div');
         createChild.innerHTML = `
 
